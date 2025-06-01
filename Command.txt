@@ -1,0 +1,15 @@
+#create a jar file while skiping test
+   mvn clean package -DskipTests
+
+# build image
+  docker build -t ms-aka-title-image  -f Dockerfile_ms_aka_title .mvn
+
+# push image to docker hub
+ docker login
+ docker tag ms-aka-title-image   abdelhamidmalki/ms-aka-title-image
+ docker push   abdelhamidmalki/ms-aka-title-image
+
+# create a network
+ docker network create my-shared-network
+
+
