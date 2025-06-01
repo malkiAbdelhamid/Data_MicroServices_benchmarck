@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ms__AkaTitle/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms__CastInfo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms__CasttInfo2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms__info_type/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_aka_name/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_aka_title/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_cast_info/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_char_name/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_comp_cast_type/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_company_name/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_company_type/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_complete_cast/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_info_type/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_keyword/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_kind_type/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_link_type/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_movie_companies/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_movie_info/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_movie_info_idx/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_movie_keyword/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_movie_link/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_name/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_person_info/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_role_type/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_title/src/main/java" charset="UTF-8" />
+  </component>
+</project>

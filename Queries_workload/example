@@ -1,0 +1,19 @@
+{
+  "select": [
+    "production_note": "MIN(ms_movie_companies.MovieCompanies.note)",
+    "movie_title": "MIN(ms_title.Title.title)",
+    "movie_year": "MIN(ms_title.Title.production_year)"
+  ],
+  "joins": [
+    "ms_company_type.CompanyType.id = ms_movie_companies.MovieCompanies.company_type_id",
+    "ms_info_type.InfoType.id = ms_movie_info_idx.MovieInfoIdx.info_type_id",
+    "ms_movie_companies.MovieCompanies.movie_id = ms_movie_info_idx.MovieInfoIdx.movie_id",
+    "ms_title.Title.id = ms_movie_companies.MovieCompanies.movie_id"
+  ],
+  "where": [
+    "ms_company_type.CompanyType.kind = 'production companies'",
+    "ms_info_type.InfoType.info = 'top 250 rank'",
+    "ms_movie_companies.MovieCompanies.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%'",
+    "ms_movie_companies.MovieCompanies.note LIKE '%(co-production)%' OR MovieCompany.note LIKE '%(presents)%'"
+  ]
+}

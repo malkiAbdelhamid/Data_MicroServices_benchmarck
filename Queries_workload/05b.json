@@ -1,0 +1,14 @@
+{
+  "select": {
+    "movie_title": "MIN(ms_title.Title.title)"
+  },
+  "joins": [
+    "ms_company_type.CompanyType.id = ms_movie_companies.MovieCompanies.companytypeid",
+    "ms_info_type.InfoType.id = ms_movie_info_idx.MovieInfoIdx.infotypeid",
+    "ms_title.Title.id = ms_movie_companies.MovieCompanies.movieid",
+    "ms_title.Title.id = ms_movie_info.MovieInfo.movieid"
+  ],
+  "where": [
+    "ms_company_type.CompanyType.kind = 'production companies'"
+  ]
+}

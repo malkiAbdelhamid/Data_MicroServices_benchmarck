@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_link_type*.jar ms_link_type.jar
+CMD java -jar /ms_link_type.jar

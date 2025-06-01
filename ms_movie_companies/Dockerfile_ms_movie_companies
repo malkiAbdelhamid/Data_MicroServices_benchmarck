@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_movie_companies*.jar ms_movie_companies.jar
+CMD java -jar /ms_movie_companies.jar

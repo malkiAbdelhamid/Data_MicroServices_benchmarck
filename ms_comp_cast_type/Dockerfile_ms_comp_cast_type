@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_comp_cast_type*.jar ms_comp_cast_type.jar
+CMD java -jar /ms_comp_cast_type.jar

@@ -1,0 +1,18 @@
+{
+  "select": {
+    "movie_title": "MIN(ms_title.Title.title)",
+    "movie_year": "MIN(ms_title.Title.productionyear)",
+    "production_note": "MIN(ms_movie_companies.MovieCompanies.note)"
+  },
+  "joins": [
+    "ms_company_type.CompanyType.id = ms_movie_companies.MovieCompanies.companytypeid",
+    "ms_info_type.InfoType.id = ms_movie_info_idx.MovieInfoIdx.infotypeid",
+    "ms_movie_companies.MovieCompanies.movieid = ms_movie_info_idx.MovieInfoIdx.movieid",
+    "ms_title.Title.id = ms_movie_companies.MovieCompanies.movieid",
+    "ms_title.Title.id = ms_movie_info.MovieInfo.movieid"
+  ],
+  "where": [
+    "ms_info_type.InfoType.info = 'top 250 rank'",
+    "ms_company_type.CompanyType.kind = 'production companies'"
+  ]
+}

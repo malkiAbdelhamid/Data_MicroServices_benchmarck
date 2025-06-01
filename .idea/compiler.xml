@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for ms_role_type" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="ms_company_name" />
+        <module name="ms_cast_info" />
+        <module name="ms_role_type" />
+        <module name="ms_movie_link" />
+        <module name="ms_comp_cast_type" />
+        <module name="ms_movie_info_idx" />
+        <module name="ms_aka_name" />
+        <module name="ms_person_info" />
+        <module name="ms_aka_title" />
+        <module name="ms_movie_info" />
+        <module name="ms_complete_cast" />
+        <module name="ms_kind_type" />
+        <module name="ms_name" />
+        <module name="ms_link_type" />
+        <module name="ms_keyword" />
+        <module name="ms_movie_companies" />
+        <module name="ms_info_type" />
+        <module name="ms_movie_keyword" />
+        <module name="ms_company_type" />
+        <module name="ms_char_name" />
+      </profile>
+      <profile name="Annotation profile for ms_title" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="ms_title" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ms__AkaTitle" target="21" />
+      <module name="ms__CastInfo" target="21" />
+      <module name="ms__CasttInfo2" target="21" />
+      <module name="ms__info_type" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ms__AkaTitle" options="-parameters" />
+      <module name="ms__CastInfo" options="-parameters" />
+      <module name="ms__CasttInfo2" options="-parameters" />
+      <module name="ms__info_type" options="-parameters" />
+      <module name="ms_aka_name" options="-parameters" />
+      <module name="ms_aka_title" options="-parameters" />
+      <module name="ms_cast_info" options="-parameters" />
+      <module name="ms_char_name" options="-parameters" />
+      <module name="ms_comp_cast_type" options="-parameters" />
+      <module name="ms_company_name" options="-parameters" />
+      <module name="ms_company_type" options="-parameters" />
+      <module name="ms_complete_cast" options="-parameters" />
+      <module name="ms_info_type" options="-parameters" />
+      <module name="ms_keyword" options="-parameters" />
+      <module name="ms_kind_type" options="-parameters" />
+      <module name="ms_link_type" options="-parameters" />
+      <module name="ms_movie_companies" options="-parameters" />
+      <module name="ms_movie_info" options="-parameters" />
+      <module name="ms_movie_info_idx" options="-parameters" />
+      <module name="ms_movie_keyword" options="-parameters" />
+      <module name="ms_movie_link" options="-parameters" />
+      <module name="ms_name" options="-parameters" />
+      <module name="ms_person_info" options="-parameters" />
+      <module name="ms_role_type" options="-parameters" />
+      <module name="ms_title" options="-parameters" />
+    </option>
+  </component>
+</project>

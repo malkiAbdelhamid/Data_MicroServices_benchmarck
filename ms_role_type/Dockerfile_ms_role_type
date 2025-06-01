@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_role_type*.jar ms_role_type.jar
+CMD java -jar /ms_role_type.jar

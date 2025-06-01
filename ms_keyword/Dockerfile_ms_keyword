@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_keyword*.jar ms_keyword.jar
+CMD java -jar /ms_keyword.jar

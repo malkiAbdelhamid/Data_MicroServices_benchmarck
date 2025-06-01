@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_complete_cast*.jar ms_complete_cast.jar
+CMD java -jar /ms_complete_cast.jar

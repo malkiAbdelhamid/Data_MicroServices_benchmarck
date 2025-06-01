@@ -1,0 +1,16 @@
+{
+  "select": {
+    "movie_title": "MIN(ms_title.Title.title)"
+  },
+  "joins": [
+    "ms_info_type.InfoType.id = ms_movie_info_idx.MovieInfoIdx.infotypeid",
+    "ms_movie_companies.MovieCompanies.movieid = ms_movie_info_idx.MovieInfoIdx.movieid",
+    "ms_title.Title.id = ms_movie_companies.MovieCompanies.movieid",
+    "ms_company_name.CompanyName.id = ms_movie_companies.MovieCompanies.companyid",
+    "ms_title.Title.id = ms_movie_keyword.MovieKeyword.movieid",
+    "ms_movie_keyword.MovieKeyword.keywordid = ms_keyword.Keyword.id",
+    "ms_movie_companies.MovieCompanies.movieid = ms_movie_keyword.MovieKeyword.movieid",
+    "ms_title.Title.id = ms_movie_info.MovieInfo.movieid"
+  ],
+  "where": []
+}

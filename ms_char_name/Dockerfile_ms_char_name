@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_char_name*.jar ms_char_name.jar
+CMD java -jar /ms_char_name.jar

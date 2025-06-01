@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_title*.jar ms_title.jar
+CMD java -jar /ms_title.jar

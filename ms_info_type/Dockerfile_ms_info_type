@@ -1,0 +1,3 @@
+FROM openjdk:23-jdk
+COPY target/ms_info_type*.jar ms_info_type.jar
+CMD java -jar /ms_info_type.jar

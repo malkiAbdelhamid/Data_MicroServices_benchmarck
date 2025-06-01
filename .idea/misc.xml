@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ms__info_type/pom.xml" />
+        <option value="$PROJECT_DIR$/ms__AkaTitle/pom.xml" />
+        <option value="$PROJECT_DIR$/ms__CastInfo/pom.xml" />
+        <option value="$PROJECT_DIR$/ms__CasttInfo2/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_aka_name/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_aka_title/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_cast_info/pom.xml" />
+        <option value="$PROJECT_DIR$/char_name/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_comp_cast_type/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_char_name/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_company_name/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_complete_cast/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_company_type/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_keyword/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_info_type/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_kind_type/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_link_type/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_movie_companies/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_movie_info/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_movie_info_idx/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_movie_keyword/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_movie_link/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_name/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_person_info/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_role_type/pom.xml" />
+        <option value="$PROJECT_DIR$/ms_title/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ms__AkaTitle/pom.xml" />
+        <option value="$PROJECT_DIR$/ms__CastInfo/pom.xml" />
+        <option value="$PROJECT_DIR$/ms__CasttInfo2/pom.xml" />
+        <option value="$PROJECT_DIR$/ms__info_type/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
