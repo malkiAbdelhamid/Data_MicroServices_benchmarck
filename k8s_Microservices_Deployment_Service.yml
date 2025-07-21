@@ -1,0 +1,860 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-aka-name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-aka-name
+  template:
+    metadata:
+      labels:
+        app: ms-aka-name
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://aka-name-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-aka-name-image
+        name: ms-aka-name
+        ports:
+        - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-aka-name-service
+spec:
+  ports:
+  - nodePort: 32280
+    port: 8082
+    protocol: TCP
+    targetPort: 8082
+  selector:
+    app: ms-aka-name
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-aka-title
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-aka-title
+  template:
+    metadata:
+      labels:
+        app: ms-aka-title
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://aka-title-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-aka-title-image
+        name: ms-aka-title
+        ports:
+        - containerPort: 8083
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-aka-title-service
+spec:
+  ports:
+  - nodePort: 32281
+    port: 8083
+    protocol: TCP
+    targetPort: 8083
+  selector:
+    app: ms-aka-title
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-cast-info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-cast-info
+  template:
+    metadata:
+      labels:
+        app: ms-cast-info
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://cast-info-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-cast-info-image
+        name: ms-cast-info
+        ports:
+        - containerPort: 8084
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-cast-info-service
+spec:
+  ports:
+  - nodePort: 32282
+    port: 8084
+    protocol: TCP
+    targetPort: 8084
+  selector:
+    app: ms-cast-info
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-char-name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-char-name
+  template:
+    metadata:
+      labels:
+        app: ms-char-name
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://char-name-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-char-name-image
+        name: ms-char-name
+        ports:
+        - containerPort: 8085
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-char-name-service
+spec:
+  ports:
+  - nodePort: 32283
+    port: 8085
+    protocol: TCP
+    targetPort: 8085
+  selector:
+    app: ms-char-name
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-comp-cast-type
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-comp-cast-type
+  template:
+    metadata:
+      labels:
+        app: ms-comp-cast-type
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://comp-cast-type-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-comp-cast-type-image
+        name: ms-comp-cast-type
+        ports:
+        - containerPort: 8086
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-comp-cast-type-service
+spec:
+  ports:
+  - nodePort: 32284
+    port: 8086
+    protocol: TCP
+    targetPort: 8086
+  selector:
+    app: ms-comp-cast-type
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-company-name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-company-name
+  template:
+    metadata:
+      labels:
+        app: ms-company-name
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://company-name-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-company-name-image
+        name: ms-company-name
+        ports:
+        - containerPort: 8087
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-company-name-service
+spec:
+  ports:
+  - nodePort: 32285
+    port: 8087
+    protocol: TCP
+    targetPort: 8087
+  selector:
+    app: ms-company-name
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-company-type
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-company-type
+  template:
+    metadata:
+      labels:
+        app: ms-company-type
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://company-type-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-company-type-image
+        name: ms-company-type
+        ports:
+        - containerPort: 8088
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-company-type-service
+spec:
+  ports:
+  - nodePort: 32286
+    port: 8088
+    protocol: TCP
+    targetPort: 8088
+  selector:
+    app: ms-company-type
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-complete-cast
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-complete-cast
+  template:
+    metadata:
+      labels:
+        app: ms-complete-cast
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://complete-cast-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-complete-cast-image
+        name: ms-complete-cast
+        ports:
+        - containerPort: 8089
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-complete-cast-service
+spec:
+  ports:
+  - nodePort: 32287
+    port: 8089
+    protocol: TCP
+    targetPort: 8089
+  selector:
+    app: ms-complete-cast
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-info-type
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-info-type
+  template:
+    metadata:
+      labels:
+        app: ms-info-type
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://info-type-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-info-type-image
+        name: ms-info-type
+        ports:
+        - containerPort: 8090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-info-type-service
+spec:
+  ports:
+  - nodePort: 32288
+    port: 8090
+    protocol: TCP
+    targetPort: 8090
+  selector:
+    app: ms-info-type
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-keyword
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-keyword
+  template:
+    metadata:
+      labels:
+        app: ms-keyword
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://keyword-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-keyword-image
+        name: ms-keyword
+        ports:
+        - containerPort: 8091
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-keyword-service
+spec:
+  ports:
+  - nodePort: 32289
+    port: 8091
+    protocol: TCP
+    targetPort: 8091
+  selector:
+    app: ms-keyword
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-kind-type
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-kind-type
+  template:
+    metadata:
+      labels:
+        app: ms-kind-type
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://kind-type-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-kind-type-image
+        name: ms-kind-type
+        ports:
+        - containerPort: 8092
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-kind-type-service
+spec:
+  ports:
+  - nodePort: 32290
+    port: 8092
+    protocol: TCP
+    targetPort: 8092
+  selector:
+    app: ms-kind-type
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-link-type
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-link-type
+  template:
+    metadata:
+      labels:
+        app: ms-link-type
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://link-type-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-link-type-image
+        name: ms-link-type
+        ports:
+        - containerPort: 8093
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-link-type-service
+spec:
+  ports:
+  - nodePort: 32291
+    port: 8093
+    protocol: TCP
+    targetPort: 8093
+  selector:
+    app: ms-link-type
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-movie-companies
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-movie-companies
+  template:
+    metadata:
+      labels:
+        app: ms-movie-companies
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://movie-companies-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-movie-companies-image
+        name: ms-movie-companies
+        ports:
+        - containerPort: 8094
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-movie-companies-service
+spec:
+  ports:
+  - nodePort: 32292
+    port: 8094
+    protocol: TCP
+    targetPort: 8094
+  selector:
+    app: ms-movie-companies
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-movie-info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-movie-info
+  template:
+    metadata:
+      labels:
+        app: ms-movie-info
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://movie-info-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-movie-info-image
+        name: ms-movie-info
+        ports:
+        - containerPort: 8095
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-movie-info-service
+spec:
+  ports:
+  - nodePort: 32293
+    port: 8095
+    protocol: TCP
+    targetPort: 8095
+  selector:
+    app: ms-movie-info
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-movie-info-idx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-movie-info-idx
+  template:
+    metadata:
+      labels:
+        app: ms-movie-info-idx
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://movie-info-idx-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-movie-info-idx-image
+        name: ms-movie-info-idx
+        ports:
+        - containerPort: 8096
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-movie-info-idx-service
+spec:
+  ports:
+  - nodePort: 32294
+    port: 8096
+    protocol: TCP
+    targetPort: 8096
+  selector:
+    app: ms-movie-info-idx
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-movie-keyword
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-movie-keyword
+  template:
+    metadata:
+      labels:
+        app: ms-movie-keyword
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://movie-keyword-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-movie-keyword-image
+        name: ms-movie-keyword
+        ports:
+        - containerPort: 8097
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-movie-keyword-service
+spec:
+  ports:
+  - nodePort: 32295
+    port: 8097
+    protocol: TCP
+    targetPort: 8097
+  selector:
+    app: ms-movie-keyword
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-movie-link
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-movie-link
+  template:
+    metadata:
+      labels:
+        app: ms-movie-link
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://movie-link-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-movie-link-image
+        name: ms-movie-link
+        ports:
+        - containerPort: 8098
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-movie-link-service
+spec:
+  ports:
+  - nodePort: 32296
+    port: 8098
+    protocol: TCP
+    targetPort: 8098
+  selector:
+    app: ms-movie-link
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-name
+  template:
+    metadata:
+      labels:
+        app: ms-name
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://name-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-name-image
+        name: ms-name
+        ports:
+        - containerPort: 8099
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-name-service
+spec:
+  ports:
+  - nodePort: 32297
+    port: 8099
+    protocol: TCP
+    targetPort: 8099
+  selector:
+    app: ms-name
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-person-info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-person-info
+  template:
+    metadata:
+      labels:
+        app: ms-person-info
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://person-info-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-person-info-image
+        name: ms-person-info
+        ports:
+        - containerPort: 8100
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-person-info-service
+spec:
+  ports:
+  - nodePort: 32298
+    port: 8100
+    protocol: TCP
+    targetPort: 8100
+  selector:
+    app: ms-person-info
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-role-type
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-role-type
+  template:
+    metadata:
+      labels:
+        app: ms-role-type
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://role-type-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-role-type-image
+        name: ms-role-type
+        ports:
+        - containerPort: 8101
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-role-type-service
+spec:
+  ports:
+  - nodePort: 32299
+    port: 8101
+    protocol: TCP
+    targetPort: 8101
+  selector:
+    app: ms-role-type
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-title
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-title
+  template:
+    metadata:
+      labels:
+        app: ms-title
+    spec:
+      containers:
+      - env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://title-db-service:5432/imdb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: postgres
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: root
+        image: abdelhamidmalki/ms-title-image
+        name: ms-title
+        ports:
+        - containerPort: 8102
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-title-service
+spec:
+  ports:
+  - nodePort: 32300
+    port: 8102
+    protocol: TCP
+    targetPort: 8102
+  selector:
+    app: ms-title
+  type: NodePort

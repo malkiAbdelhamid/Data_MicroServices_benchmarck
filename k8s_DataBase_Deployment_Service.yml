@@ -1,0 +1,1049 @@
+---
+# AKA_NAME_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aka-name-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: aka-name-db
+  template:
+    metadata:
+      labels: 
+        app: aka-name-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: aka-name-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/aka_name
+          type: Directory
+        name: aka-name-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aka-name-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: aka-name-db
+  type: ClusterIP
+
+---
+# AKA_TITLE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aka-title-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: aka-title-db
+  template:
+    metadata:
+      labels: 
+        app: aka-title-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: aka-title-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/aka_title
+          type: Directory
+        name: aka-title-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aka-title-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: aka-title-db
+  type: ClusterIP
+
+---
+# CAST_INFO_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cast-info-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: cast-info-db
+  template:
+    metadata:
+      labels: 
+        app: cast-info-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: cast-info-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/cast_info
+          type: Directory
+        name: cast-info-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cast-info-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: cast-info-db
+  type: ClusterIP
+
+---
+# CHAR_NAME_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: char-name-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: char-name-db
+  template:
+    metadata:
+      labels: 
+        app: char-name-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: char-name-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/char_name
+          type: Directory
+        name: char-name-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: char-name-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: char-name-db
+  type: ClusterIP
+
+---
+# COMP_CAST_TYPE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comp-cast-type-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: comp-cast-type-db
+  template:
+    metadata:
+      labels: 
+        app: comp-cast-type-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: comp-cast-type-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/comp_cast_type
+          type: Directory
+        name: comp-cast-type-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: comp-cast-type-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: comp-cast-type-db
+  type: ClusterIP
+
+---
+# COMPANY_NAME_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: company-name-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: company-name-db
+  template:
+    metadata:
+      labels: 
+        app: company-name-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: company-name-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/company_name
+          type: Directory
+        name: company-name-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: company-name-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: company-name-db
+  type: ClusterIP
+
+---
+# COMPANY_TYPE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: company-type-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: company-type-db
+  template:
+    metadata:
+      labels: 
+        app: company-type-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: company-type-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/company_type
+          type: Directory
+        name: company-type-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: company-type-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: company-type-db
+  type: ClusterIP
+
+---
+# COMPLETE_CAST_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complete-cast-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: complete-cast-db
+  template:
+    metadata:
+      labels: 
+        app: complete-cast-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: complete-cast-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/complete_cast
+          type: Directory
+        name: complete-cast-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: complete-cast-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: complete-cast-db
+  type: ClusterIP
+
+---
+# INFO_TYPE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: info-type-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: info-type-db
+  template:
+    metadata:
+      labels: 
+        app: info-type-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: info-type-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/info_type
+          type: Directory
+        name: info-type-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: info-type-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: info-type-db
+  type: ClusterIP
+
+---
+# KEYWORD_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keyword-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: keyword-db
+  template:
+    metadata:
+      labels: 
+        app: keyword-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: keyword-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/keyword
+          type: Directory
+        name: keyword-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: keyword-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: keyword-db
+  type: ClusterIP
+
+---
+# KIND_TYPE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kind-type-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: kind-type-db
+  template:
+    metadata:
+      labels: 
+        app: kind-type-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: kind-type-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/kind_type
+          type: Directory
+        name: kind-type-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kind-type-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: kind-type-db
+  type: ClusterIP
+
+---
+# LINK_TYPE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: link-type-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: link-type-db
+  template:
+    metadata:
+      labels: 
+        app: link-type-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: link-type-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/link_type
+          type: Directory
+        name: link-type-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: link-type-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: link-type-db
+  type: ClusterIP
+
+---
+# MOVIE_COMPANIES_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-companies-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: movie-companies-db
+  template:
+    metadata:
+      labels: 
+        app: movie-companies-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: movie-companies-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/movie_companies
+          type: Directory
+        name: movie-companies-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-companies-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: movie-companies-db
+  type: ClusterIP
+
+---
+# MOVIE_INFO_IDX_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-info-idx-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: movie-info-idx-db
+  template:
+    metadata:
+      labels: 
+        app: movie-info-idx-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: movie-info-idx-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/movie_info_idx
+          type: Directory
+        name: movie-info-idx-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-info-idx-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: movie-info-idx-db
+  type: ClusterIP
+
+---
+# MOVIE_KEYWORD_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-keyword-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: movie-keyword-db
+  template:
+    metadata:
+      labels: 
+        app: movie-keyword-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: movie-keyword-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/movie_keyword
+          type: Directory
+        name: movie-keyword-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-keyword-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: movie-keyword-db
+  type: ClusterIP
+
+---
+# MOVIE_LINK_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-link-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: movie-link-db
+  template:
+    metadata:
+      labels: 
+        app: movie-link-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: movie-link-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/movie_link
+          type: Directory
+        name: movie-link-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-link-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: movie-link-db
+  type: ClusterIP
+
+---
+# NAME_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: name-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: name-db
+  template:
+    metadata:
+      labels: 
+        app: name-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: name-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/name
+          type: Directory
+        name: name-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: name-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: name-db
+  type: ClusterIP
+
+---
+# ROLE_TYPE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: role-type-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: role-type-db
+  template:
+    metadata:
+      labels: 
+        app: role-type-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: role-type-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/role_type
+          type: Directory
+        name: role-type-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: role-type-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: role-type-db
+  type: ClusterIP
+
+---
+# TITLE_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: title-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: title-db
+  template:
+    metadata:
+      labels: 
+        app: title-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: title-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/title
+          type: Directory
+        name: title-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: title-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: title-db
+  type: ClusterIP
+
+---
+# MOVIE_INFO_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-info-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: movie-info-db
+  template:
+    metadata:
+      labels: 
+        app: movie-info-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: movie-info-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/movie_info
+          type: Directory
+        name: movie-info-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-info-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: movie-info-db
+  type: ClusterIP
+
+---
+# PERSON_INFO_DB
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: person-info-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: person-info-db
+  template:
+    metadata:
+      labels: 
+        app: person-info-db
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_DB
+          value: imdb
+        image: postgres:17
+        name: postgres
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d
+          name: person-info-db-vol0
+      volumes:
+      - hostPath:
+          path: /home/ubuntu/IMDB_DataSet_Per_Table/person_info
+          type: Directory
+        name: person-info-db-vol0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: person-info-db-service
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: person-info-db
+  type: ClusterIP
