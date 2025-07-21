@@ -1,4 +1,4 @@
-# Join_MicroServices_benchmarck
+# DATA_MicroServices_benchmarck
 
 This repository provides a complete benchmark microservice environment for evaluating data composition strategies in microservice-based architectures, as presented in the paper:
 
