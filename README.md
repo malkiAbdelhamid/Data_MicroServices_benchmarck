@@ -27,7 +27,7 @@ This benchmark reproduces the experimental setup used in the paper to evaluate D
 
 ### Step 1: Download the CSV Dataset
 
-Each microservice has its own dataset. To download them using the driver link in the file `datasetlink.txt`:
+Each microservice has its own dataset. To download them using the driver link in the file `dataset_link.txt`:
 
 ```bash
 gdown https://drive.google.com/file/d/1H-dktt8eqof8Cj6HBuh7gRBWIK0Hfo8T/view
